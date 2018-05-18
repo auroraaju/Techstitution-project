@@ -1,0 +1,130 @@
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<title> Prokurimi </title>
+
+</head>
+<body class="container">
+  <br>
+<h1 style="color:green;">Shto kontraten e re </h1>
+<h3> Prokurimi: </h3>
+<br>
+<br>
+
+  <form  method="POST" action="/project/add">
+    <div>
+    <label> Nr. rendor i prokurimit </label> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+   <label> Lloji prokurimit </label> <br>
+  <div class="form-inline">
+ <input class="form-control col-3", name="Nr. rendor i prokurimit" type="text" placeholder="Nr. rendor i prokurimit" required="">&nbsp
+
+ <input class="form-control col-3", name="Lloji prokurimit" type="text" placeholder="Lloji i prokurimit" required=""> </div>
+ <br>
+<label> Aktiviteti i prokurimit </label>
+<br>
+ <input class="form-control col-6",  name="Aktiviteti i prokurimit" type="text" placeholder="Aktiviteti i prokurimit" required="" >
+</div>
+<br>
+<br>
+<br>
+<div>
+ <h3> Datat: </h3>
+ <label> Data e inicimit te aktivitetit te &nbsp &nbsp &nbsp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Data e publikimit <br>
+  prokurimit &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp &nbsp &nbsp të shpalljes
+</label> &nbsp &nbsp
+ <div class="form-inline">
+
+ <input required="" class="form-control col-3" placeholder="03.03.2018" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"> &nbsp
+ <input required="" class="form-control col-3" placeholder="03.03.2018" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"> </div>
+ <br>
+ <br>
+
+
+ <label> Data e nenshkrimit te kontrates </label>
+ <br>
+ <input required="" class="form-control col-6" placeholder="03.03.2018" type="text" onfocus="(this.type='date')" onblur="(this.type='text')">
+ <br>
+ <label> Afatet per nenshkrimin e kontrates </label>
+ <br>
+ <div class="form-inline">
+ <input required="" class="form-control col-3" placeholder="03.03.2018" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"> &nbsp
+ <input required="" class="form-control col-3" placeholder="03.03.2018" type="text" onfocus="(this.type='date')" onblur="(this.type='text')"> </div>
+ <BR>
+ <label> Data e permbylljes se kontrates (data e pranimit <br>
+ te perkohshem / preliminar) </label>
+ <br>
+ <input required="" class="form-control col-6" placeholder="03.03.2018" type="text" onfocus="(this.type='date')" onblur="(this.type='text')">
+</div>
+<br>
+<br>
+<br>
+<div>
+<h3> Çmimet dhe te dhenat tjera </h3>
+<label> Çmimi i kontrates (duke perfshire &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Çmimi total i paguar <br>
+          te gjitha taksat) &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  per kontraten	</label>
+<br>
+<div class="form-inline">
+<input required="" class="form-control col-3" type="number" placeholder="Çmimi i kontrates"> &nbsp
+<input required="" class="form-control col-3" type="number" placeholder="Çmimi total">
+</div>
+<br>
+<label> Emri i te cilit eshte dhene kontrata </label>
+<br>
+<input required="" class="form-control col-6" type="text" placeholder="Emri dhe Mbiemri" >
+<br>
+</div
+<div class="d-inline">
+<button class="col-3 btn btn-success" value="Submit" type="submit">DERGO</button>
+<button class="col-3 btn btn-secondary" value="Reset" type="reset" >FSHIJ</button>
+</div>
+</form>
+
+<table border="1"  class="col-6">
+
+
+
+<tr>
+  <th> Nr. rendor i prokurimit </th>
+    <th> Lloji i prokutimit </th>
+    <th> Aktiviteti i prokurimit </th>
+    <th> Data e inicimit te aktivitetit te prokurimit</th>
+    <th> Data e publikimit të shpalljes </th>
+    <th> Data e nenshkrimit te kontrates  </th>
+    <th> Afatet per nenshkrimin e kontrates  </th>
+    <th> Data e permbylljes se kontrates data e pranimit
+      te perkohshem / preliminar </th>
+      <th> Çmimi i kontrates duke perfshire te gjitha taksat </th>
+      <th> Çmimi total i paguar per kontraten </th>
+      <th> Emri i te cilit eshte dhene kontrata  </th>
+
+
+
+<th> Edit </th>
+<th> Delete </th>
+
+</tr>
+<% docs.map((doc)=>{ %>
+<tr>
+  <td> <%=doc.numri%> </td>
+  <td> <%=doc.lloj%> </td>
+  <td> <%=doc.Aktiviteti%> </td>
+  <td> <%=doc.Data%> </td>
+  <td> <%=doc.Data1%> </td>
+  <td> <%=doc.Data2%> </td>
+  <td> <%=doc.Afatet%> <%=doc.Afatet1%> </td>
+  <td> <%=doc.Data3%> </td>
+  <td> <%=doc.cmimi%> </td>
+  <td> <%=doc.cmimi1%> </td>
+  <td> <%=doc.Emri%> </td>
+
+
+
+<td> <a href="/project/edit/<%=doc._id %>"> Edit </a></td>
+<td> <a href="/project/delete/<%= doc._id %>"> Delete </a></td>
+</tr>
+
+<% }); %>
+
+</table>
